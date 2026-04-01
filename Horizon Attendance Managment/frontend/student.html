@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMIU | Student Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>True North</h2>
+        <nav>
+            <a href="attendance.html">Mark Attendance</a>
+            <a href="students.html" class="active">Student Management</a>
+            <a href="index.html" style="margin-top: 50px; color: #e74c3c; border-top: 1px solid #444;">← Logout / Home</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Manage Students</h1>
+        </header>
+
+        <section class="attendance-card">
+            <h3>Add New Student</h3>
+            <div class="controls">
+                <input type="text" id="studentName" placeholder="Full Name">
+                <input type="text" id="studentSemester" placeholder="Semester (e.g. 5)">
+                <button onclick="addStudent()" class="btn-primary">Add Student</button>
+            </div>
+        </section>
+
+        <section class="attendance-card">
+            <h3>Student List</h3>
+            <table id="studentTable" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 2px solid #eee;">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Load students as soon as the page opens
+        window.onload = getAllStudents;
+    </script>
+</body>
+</html>
